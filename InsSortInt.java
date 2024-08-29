@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class InsSortInt {
   public static void main(String[] args) {
-    int temp;
     ArrayList<String> strnums = new ArrayList<String>();    
     try {
       File myObj = new File("randInts.txt");
@@ -23,6 +22,13 @@ public class InsSortInt {
     for(int i = 0; i < strnums.size(); i++){
         nums[i] = Integer.parseInt(strnums.get(i));
     }
+    insertionSort(nums);
+    System.out.println(nums[0]);
+    System.out.println(nums[nums.length-1]);
+    
+  }
+  public static void insertionSort(int[] nums){
+    int temp;
     for(int i = 1; i < nums.length; i++){
         int j = i;
         while(j >=1 && nums[j-1] > nums[j]){
@@ -31,9 +37,6 @@ public class InsSortInt {
             nums[j] = temp;
             j--;
         }
-    }
-    for(int i = 0; i < nums.length; i++){
-         System.out.println(nums[i]);
     }
   }
 }
